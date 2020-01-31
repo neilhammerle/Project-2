@@ -1,5 +1,13 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+CREATE DATABASE CalCount;
+USE CalCount;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+CREATE TABLE counts
+(
+	id int NOT NULL AUTO_INCREMENT,
+	age varchar(255) NOT NULL,
+    gender varchar(255) NOT NULL,
+    calories varchar(255) NOT NULL,
+    height varchar(255) NOT NULL,
+    weight varchar(255) NOT NULL,
+	PRIMARY KEY (id)
+);
