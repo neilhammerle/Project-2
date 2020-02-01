@@ -4,6 +4,12 @@
         "commonjs": true,
         "node": true
     },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+          "experimentalObjectRestSpread": true
+        }
+      },
     "extends": "prettier",
     "plugins": [
         "prettier"
