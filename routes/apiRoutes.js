@@ -54,6 +54,7 @@ module.exports = function(app) {
         // always executed
         console.log("hello");
         res.json(response);
+        document.write(response);
       });
   });
 };
