@@ -24,8 +24,15 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get("/diet-recipes/:id", function(req, res) {
-    console.log('test');
     res.render("diet-recipes", {
+      header: req.params.id,
+      query: req.query
+    });
+  });
+
+   // Load example page and pass in an example by id
+   app.get("/diet-plans/", function(req, res) {
+    res.render("diet-plans", {
       header: req.params.id,
       query: req.query
     });
