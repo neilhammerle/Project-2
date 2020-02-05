@@ -22,6 +22,15 @@ module.exports = function(app) {
     });
   });
 
+  // Load example page and pass in an example by id
+  app.get("/diet-recipes/:id", function(req, res) {
+    console.log('test');
+    res.render("diet-recipes", {
+      header: req.params.id,
+      query: req.query
+    });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
