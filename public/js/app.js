@@ -50,12 +50,12 @@ $("targetCalories");
 
 // Here is a firebase event that formats the html and pulls data into it
 database.ref().on("child_added", function(snapshot, prevChildKey) {
-    console.log(snapshot.val());
+  console.log(snapshot.val());
 
-    //Store all of this info into a variable
-    let snapHeight = snapshot.val().height;
-    let snapAge = snapshot.val().age;
-    let snapGender = snapshot.val().gender;
-    let snapWeight = snapshot.val().weight;
-    let snapTargetCalories = snapshot.val().targetCalories;
+  //Store all of this info into a variable
+  let snapHeight = snapshot.val().height;
+  let snapAge = snapshot.val().age;
+  let snapGender = snapshot.val().gender;
+  let snapWeight = snapshot.val().weight;
+  let snapTargetCalories = snapshot.val().targetCalories;
 });

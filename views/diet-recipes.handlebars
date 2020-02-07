@@ -1,131 +1,30 @@
 <div class="header">
-    <div class="container">
-        <h1>
-            {{header}}
+    <div class="container text-center">
+        <h1 class="page-title">
+            
         </h1>
     </div>
 </div>
 
 
 
-<div class="content mt-5 body-img">
+<div class="content mt-5">
     <div class="container">
         <h2 class="text-center">Your Calories of the day</h2>
         <div class="row">
-            <div class="col-md-4 offset-md-4 card">
-                <h2><span class="calories">{{query.cal}}</span> Calories</h2>
+            <div class="col-md-4 offset-md-4 text-center card">
+                <h2><span class="calories"></span></h2>
             </div>
         </div>
     </div>
 </div>
 <div class="content mt-5 mb-5">
     <div class="container">
-
-        <div class="card breakfast">
-            <div class="card-header">
-                <h3>Breakfast</h3>
-            </div>
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                <p class="recipe-name">Recipe Name</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                </blockquote>
-            </div>
+        <div class="row meals">
+            <!-- The Recipes get added here -->
         </div>
-
-        <div class="card mt-4">
-            <div class="card-header">
-                <h3>Lunch</h3>
-            </div>
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                </blockquote>
-            </div>
-        </div>
-
-        <div class="card mt-4">
-            <div class="card-header">
-                <h3>Dinner</h3>
-            </div>
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                </blockquote>
-            </div>
-        </div>
-
     </div>
 </div>
 
 
-<script>
-
-<body background = "/assets/pic/background-recipe.jpg">
-
-
-
-
-
-    (function($,doc){
-        let recipe = "{{header}}";
-        let userCalories = "{{query.cal}}"
-
-        console.log('recipe:',recipe);
-        let userSearch = $('.header h1').text().trim();
-        console.log('userSearch:',userSearch);
-        let APPID = "ea609d64";
-        let APIKEY = "308c7451b81f8d1eaa36b355b451f12d";
-        let recipieURL =
-        "https://api.edamam.com/search?q=" +
-        userSearch +
-        "&app_id=" +
-        APPID +
-        "&app_key=" +
-        APIKEY +
-        "&to=100";
-        $.ajax({
-            url: recipieURL,
-            method: 'GET',
-            context: doc.body,
-            dataType: 'json',
-            crossDomain: true,
-            async: false,
-            error: function (jqXHR, textStatus, errorThrown) {
-                return jqXHR;
-            },
-            success: function(response){
-                var positions = response;
-                resp = positions;
-            },
-            complete: function(response){
-                console.log('response:',response);
-                console.log(response.responseJSON);
-                
-
-                for(var i = 0; i < 9; i++){
-                    var recipeResults = response.responseJSON.hits[i].recipe;
-                    var calories = recipeResults.calories;
-
-                    if(calories < userCalories){
-                        console.log(recipeResults.label); //name of recipe
-                        console.log(recipeResults.calories);
-                        console.log(recipeResults.image);
-                        console.log(recipeResults.shareAs); //link URL to recipe page
-                        console.log('--------------')
-
-                        $('.breakfast .recipe-name').html(recipeResults.label);
-                    }
-                    
-                }
-            }
-        });
-        
-
-        
-
-
-    })(jQuery,document);
-</script>
+<script src="/js/diet-recipes.js"></script>
