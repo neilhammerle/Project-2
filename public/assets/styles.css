@@ -50,13 +50,18 @@ body {
   border-top-right-radius: 0;
 }
 
-.img{
-  height: 100%;
+.card-img-top{
+  height: 50%;
 }
 .card{
   height: 100%;
+  text-align: center;
+  
 }
 .card-body {
  align-items: baseline;
 }
 
+.container {
+  background-image: url(https://images.unsplash.com/photo-1536566482680-fca31930a0bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+}
