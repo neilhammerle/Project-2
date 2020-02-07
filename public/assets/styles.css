@@ -53,5 +53,6 @@ body {
   height: 100%;
 }
 .card-body {
- align-content: center;
+ align-items: baseline;
 }
+
