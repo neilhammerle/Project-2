@@ -3,10 +3,71 @@
 
 
     <div class="card">
-        <div class="card-body">
-        Your daily calorie intake goal is .....
-        </div>
+        <div class="calc-outer-wrap">
+            <div id="form-error" style="display:none;"></div>
+            <form class="card calc-form" id="calc-form">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                            <label for="age" class="top-label">Age:</label>   
+                            <input class="form-control" type="text" name="age" id="age" inputmode="numeric" pattern="[0-9]*">
+                            <select class="dropdown dropdown-toggle btn btn-primary" name="gender">
+                                <option value="Female">Female</option>
+                                <option value="Male">Male</option>
+                            </select>
+                            
+                        </div>
+
+                        <div class="col-md-4 form-group">
+                            <label for="height" class="top-label">Height:</label>
+                            <div class="field-items">
+                                <div class="field">
+                                <input class="form-control" type="text" name="height_ft" id="height-ft" inputmode="numeric" pattern="[0-9]*">
+                                <small class="form-text text-muted" for="height-ft">feet</small>
+                                </div><!--  /.field -->
+                                <div class="field">
+                                <input class="form-control" type="text" name="height_in" id="height-in" inputmode="numeric" pattern="[0-9]*">
+                                <small class="form-text text-muted" for="height-in">inches</small>
+                                </div><!--  /.field -->
+                            <div class="field">
+                                <input class="form-control" type="text" name="height_cm" id="height-cm" inputmode="numeric" pattern="[0-9]*">
+                                <small class="form-text text-muted" for="height-cm">or centimeters</small>
+                                </div><!--  /.field -->        
+                            </div><!--  /.field-items -->
+                        </div>
+
+                        <div class="col-md-4 form-group">
+                            <label for="weight" class="top-label">Your weight:</label>
+                            <div class="field-items">
+                                <div class="field field-large">
+                                <input class="form-control" type="text" name="weight" id="weight" inputmode="numeric" pattern="[0-9]*">
+                                </div><!--  /.field-large -->
+                                <div class="field field-small">
+                                <select class="dropdown dropdown-toggle btn btn-primary" name="weight_unit">
+                                    <option value="lb">lb</option>
+                                    <option value="kg">kg</option>
+                                </select>
+                                </div><!--  /.field-small -->
+                            </div><!--  /.field-items -->
+                        </div>
+                    </div>
+                    
+
+
+                    <div class="btn-wrap">
+                        <button class="btn btn-primary form-submit">Calculate</button>
+                    </div>
+                </div><!--  /.form fields -->
+
+
+            </form>
+            
+        </div><!--  /.calc-outer-wrap -->
     </div>
+    <div class="card text-center">
+        <div class="card-body" id="results" style="display:none;"></div>
+    </div>
+    
 
     <div class="row row-cols-1 row-cols-md-2 mt-5">
         <div class="col mb-4">
@@ -15,7 +76,7 @@
                 <div class="card-body">
                 <h5 class="card-title">PALEO DIET</h5>
                 <p class="card-text">A dietary plan that consists of fish, lean meats, fruits, nuts, vegetables, and seeds. Some foods to avoid are grains, dairy, salt, refined sugar, or highly processed foods. People may follow this diet because not only is it a sufficient way to lose weight, it is also an effective way to maintain a healthy weight. It is also recommended to get regular exercise when following this diet plan.</p>
-                <a href="/diet-recipes/paleo?cal=2000" class="btn btn-primary">Choose</a>
+                <a href="/diet-recipes/paleo?cal=" class="btn btn-primary disabled">Choose</a>
                 </div>
             </div>
         </div>
@@ -25,7 +86,7 @@
                 <div class="card-body">
                     <h5 class="card-title">VEGAN DIET</h5>
                     <p class="card-text">A dietary plan that is devoid of all food products associated with animals. This diet avoids foods such as meat, eggs, and dairy. Plant foods are usually consumed instead. These consist of fruits, vegetables, nuts, whole grains, and seeds. The benefits of a vegan diet include: losing weight/ having a lower body mass index than non-vegan eaters, reducing the chance of contracting diabetes, a lower risk of heart disease, and aiding in the cause of protecting animals and the environment.</p>
-                    <a href="/diet-recipes/vegan?cal=1600" class="btn btn-primary">Choose</a>
+                    <a href="/diet-recipes/vegan?cal=" class="btn btn-primary disabled">Choose</a>
                 </div>
             </div>
         </div>
@@ -35,7 +96,7 @@
                 <div class="card-body">
                     <h5 class="card-title">VEGETARIAN DIET</h5>
                     <p class="card-text">A dietary plan that consists of fruits, vegetables, grains, nuts, seeds, and dairy. All forms of meat/fish are avoided. Some advantages for following this diet plan are supporting weight loss, reducing the risk of heart disease, protecting the rights of animals, and reducing greenhouse gas emissions.</p>
-                    <a href="/diet-recipes/vegetarian?cal=1700" class="btn btn-primary">Choose</a>
+                    <a href="/diet-recipes/vegetarian?cal=" class="btn btn-primary disabled">Choose</a>
                 </div>
             </div>
         </div>
@@ -45,7 +106,7 @@
                 <div class="card-body">
                     <h5 class="card-title">HIGH PROTEIN DIET</h5>
                     <p class="card-text">A dietary plan consisting of meat, fish, dairy, beans, eggs, and protein-rich vegetables. People following this diet will also reduce the amount of carbohydrates they consume. Benefits of this diet plan include: weight loss due to an increased metabolism rate, helping the body maintain and repair muscles/bones, increased muscle mass, and the increased production of amino acids.</p>
-                    <a href="/diet-recipes/highprotein?cal=2000" class="btn btn-primary">Choose</a>
+                    <a href="/diet-recipes/high+protein?cal=" class="btn btn-primary disabled">Choose</a>
                 </div>
             </div>
         </div>
@@ -55,7 +116,7 @@
                 <div class="card-body">
                     <h5 class="card-title">LOW FAT DIET</h5>
                     <p class="card-text">A dietary plan that consists of all types of grains, low fat dairy products, low fat meat/fish products, fruits, and vegetables. People may follow this diet because it essentially eliminates the unhealthy fats from the diet overall. Eating low fat foods reduce the risk of heart disease, lowering cholesterol/blood pressure rates, and reducing the chance of causing diarrhea. </p>
-                    <a href="/diet-recipes/lowfat?cal=2000" class="btn btn-primary">Choose</a>
+                    <a href="/diet-recipes/lowfat?cal=" class="btn btn-primary disabled">Choose</a>
                 </div>
             </div>
         </div>
@@ -65,9 +126,11 @@
                 <div class="card-body">
                     <h5 class="card-title">BALANCED DIET</h5>
                     <p class="card-text">A dietary plan that fulfills an individual’s nutritional needs since everyone needs a certain amount of calories/nutrients to remain healthy. Each meal should be made up of 50% fruits/vegetables, 50% grains/protein, and a serving of a low fat dairy source. However, junk foods or processed foods should be avoided because those foods are not considered nutritious.</p>
-                    <a href="/diet-recipes/balanced?cal=2000" class="btn btn-primary">Choose</a>
+                    <a href="/diet-recipes/balanced?cal=" class="btn btn-primary disabled">Choose</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="/js/diet-plans.js"></script>
