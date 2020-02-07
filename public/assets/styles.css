@@ -45,3 +45,13 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.img{
+  height: 100%;
+}
+.card{
+  height: 100%;
+}
+.card-body {
+ align-content: center;
+}
