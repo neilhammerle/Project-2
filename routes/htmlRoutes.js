@@ -38,6 +38,12 @@ module.exports = function (app) {
     });
   });
 
+  // Loads sign up page
+  app.get("/signup/", function (req, res) {
+    res.render("signup", {
+    });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
