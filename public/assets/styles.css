@@ -52,6 +52,7 @@ body {
 .card{
   height: 100%;
   text-align: center;
+  
 }
 .card-body {
  align-items: baseline;
