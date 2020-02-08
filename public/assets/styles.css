@@ -3,21 +3,18 @@
 }
 
 body {
-  
+  background-image: url("/assets/pics/greenbackground.jpeg");
   height: 100%;
 }
 
 body {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f5f5f5;
 }
 .body-img {
-  background-image: url("../assets/pics/background-recipe.jpg");
+  background-image: url("../assets/pics/body-bg.jpg");
+  background-size: cover;
 }
 
 .form-signin {
@@ -62,6 +59,14 @@ body {
  align-items: baseline;
 }
 
+<<<<<<< HEAD
 .container {
   background-image: url(https://images.unsplash.com/photo-1536566482680-fca31930a0bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
 }
+=======
+.dropdown {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+>>>>>>> c216dfcab915cefc89ce393ec188cf9e7612f5b9
