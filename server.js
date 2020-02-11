@@ -1,10 +1,14 @@
 require("dotenv").config();
 var express = require("express");
+var connectDB = require("./db/Connection");
 var exphbs = require("express-handlebars");
 
 var db = require("./models");
 
 var app = express();
+connectDB();
+app.use(express.json({ extended: false }));
+app.use("/api/userModel", require("./api/User"));
 var PORT = process.env.PORT || 3000;
 
 // Middleware
